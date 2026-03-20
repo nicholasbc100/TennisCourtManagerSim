@@ -1,0 +1,125 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>County Club Tennis Court Manager Simulator</title>
+    <style>
+      :root {
+        color-scheme: light;
+        font-family: "Segoe UI", Arial, sans-serif;
+      }
+      body {
+        margin: 0;
+        background: #f2f5f7;
+        color: #1c2a34;
+      }
+      .container {
+        max-width: 960px;
+        margin: 0 auto;
+        padding: 24px;
+      }
+      .panel {
+        background: #fff;
+        border-radius: 10px;
+        padding: 16px;
+        box-shadow: 0 2px 10px rgba(28, 42, 52, 0.08);
+        margin-bottom: 16px;
+      }
+      h1 {
+        margin-top: 0;
+      }
+      .stats {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+        gap: 10px;
+      }
+      .stat {
+        background: #f8fbfd;
+        border: 1px solid #dde6ec;
+        border-radius: 8px;
+        padding: 10px;
+      }
+      .label {
+        display: block;
+        color: #4f6877;
+        font-size: 12px;
+      }
+      .value {
+        font-size: 20px;
+        font-weight: 700;
+      }
+      .actions {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 8px;
+      }
+      button {
+        border: 0;
+        border-radius: 8px;
+        padding: 10px 12px;
+        font-weight: 600;
+        background: #dce9f2;
+        color: #133042;
+        cursor: pointer;
+      }
+      button.primary {
+        background: #2f8fcb;
+        color: #fff;
+      }
+      button:disabled {
+        opacity: 0.6;
+        cursor: not-allowed;
+      }
+      .log {
+        min-height: 120px;
+        max-height: 240px;
+        overflow: auto;
+        background: #0f1b24;
+        color: #d9ebf7;
+        border-radius: 8px;
+        padding: 10px;
+        font-family: Consolas, "Courier New", monospace;
+      }
+      .footer {
+        font-size: 12px;
+        color: #587182;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <div class="panel">
+        <h1>County Club Tennis Court Manager</h1>
+        <p>
+          Run your club for 30 days. Keep money positive, members happy, and your
+          courts in good shape.
+        </p>
+      </div>
+
+      <div class="panel stats" id="stats"></div>
+
+      <div class="panel">
+        <div class="actions">
+          <button class="primary" id="runDayButton">Run Day</button>
+          <button id="maintenanceButton">Court Maintenance (-$120)</button>
+          <button id="marketingButton">Marketing Push (-$150)</button>
+          <button id="buildButton">Build New Court (-$700)</button>
+          <button id="tournamentButton">Host Junior Tournament (-$220)</button>
+          <button id="restartButton">Restart</button>
+        </div>
+      </div>
+
+      <div class="panel">
+        <h2>Club Log</h2>
+        <div class="log" id="log"></div>
+      </div>
+
+      <div class="footer">
+        Tip: Build courts and reputation to increase bookings and revenue.
+      </div>
+    </div>
+
+    <script src="./simulator.js"></script>
+  </body>
+</html>
